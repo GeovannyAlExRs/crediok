@@ -1,23 +1,20 @@
             <!-- Page header -->
             <div class="full-box page-header">
-                <h3 class="text-left">
+                <h4 class="text-left">
                     <i class="fas fa-plus fa-fw"></i> &nbsp; AGREGAR ITEM
-                </h3>
-                <p class="text-justify">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque laudantium necessitatibus eius iure adipisci modi distinctio. Earum repellat iste et aut, ullam, animi similique sed soluta tempore cum quis corporis!
-                </p>
+                </h4>
             </div>
 
             <div class="container-fluid">
                 <ul class="full-box list-unstyled page-nav-tabs">
                     <li>
-                        <a class="active" href="item-new.html"><i class="fas fa-plus fa-fw"></i> &nbsp; AGREGAR ITEM</a>
+                        <a class="active" href="<?php echo SERVEURL?>item-new"><i class="fas fa-plus fa-fw"></i> &nbsp; AGREGAR ITEM</a>
                     </li>
                     <li>
-                        <a href="item-list.html"><i class="fas fa-clipboard-list fa-fw"></i> &nbsp; LISTA DE ITEMS</a>
+                        <a href="<?php echo SERVEURL?>item-list"><i class="fas fa-clipboard-list fa-fw"></i> &nbsp; LISTA DE ITEMS</a>
                     </li>
                     <li>
-                        <a href="item-search.html"><i class="fas fa-search fa-fw"></i> &nbsp; BUSCAR ITEM</a>
+                        <a href="<?php echo SERVEURL?>item-search"><i class="fas fa-search fa-fw"></i> &nbsp; BUSCAR ITEM</a>
                     </li>
                 </ul>
             </div>
