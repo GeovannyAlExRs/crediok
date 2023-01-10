@@ -1,2 +1,2 @@
 # crediok
-Project developed in PHP with MyQL Database
+Project developed in PHP with MySQL Database
