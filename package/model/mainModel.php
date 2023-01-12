@@ -49,4 +49,39 @@
             return $letter."-".$digit;
 		}
 
+        /*** [FUNCTION CLEAR CHAIN] ***/
+        protected static function clearChain($chain) {
+            $chain = str_ireplace("<script>", "", $chain);
+            $chain = str_ireplace("</script>", "", $chain);
+            $chain = str_ireplace("<script type=>", "", $chain);
+            $chain = str_ireplace("<script src>", "", $chain);
+            $chain = str_ireplace("SELECT * FROM", "", $chain);
+            $chain = str_ireplace("INSERT INTO", "", $chain);
+            $chain = str_ireplace("DELETE FROM", "", $chain);
+            $chain = str_ireplace("DROP DATABASE", "", $chain);
+            $chain = str_ireplace("DROP TABLE", "", $chain);
+            $chain = str_ireplace("TRUNCATE TABLE", "", $chain);
+            $chain = str_ireplace("SHOW DATABASES", "", $chain);
+            $chain = str_ireplace("SHOW TABLE", "", $chain);
+            $chain = str_ireplace("<?php", "", $chain);
+            $chain = str_ireplace("?>", "", $chain);
+            $chain = str_ireplace("-", "", $chain);
+            $chain = str_ireplace("--", "", $chain);
+            $chain = str_ireplace("[", "", $chain);
+            $chain = str_ireplace("]", "", $chain);
+            $chain = str_ireplace("{", "", $chain);
+            $chain = str_ireplace("}", "", $chain);
+            $chain = str_ireplace(">", "", $chain);
+            $chain = str_ireplace("<", "", $chain);
+            $chain = str_ireplace("^", "", $chain);
+            $chain = str_ireplace("==", "", $chain);
+            $chain = str_ireplace(";", "", $chain);
+            $chain = str_ireplace("::", "", $chain);
+            $chain = str_ireplace("->", "", $chain);
+            $chain = str_ireplace("AND", "", $chain);
+            $chain = str_ireplace("OR", "", $chain);
+            $chain = stripslashes($chain);
+            $chain = trim($chain);
+            return $chain;
+        }
     }
