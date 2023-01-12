@@ -84,4 +84,23 @@
             $chain = trim($chain);
             return $chain;
         }
+
+        /*** [FUNCTION VERIFY DATA] ***/
+        protected static function verifyData($filter, $chain) {
+            if(preg_match("/^".$filter."$/", $chain)) { //EXPRESION REGULAR
+                return false;
+            } else {
+                return true;
+            }
+        }
+
+        /*** [FUNCTION VERIFY DATE] ***/
+        protected static function verifyDate($date) {
+            $value = explode('-', $date);
+            if(count($value) == 3 && checkdate($value[1], $value[2], $value[0])) {
+                return false;
+            } else {
+                return true;
+            }
+        }
     }
