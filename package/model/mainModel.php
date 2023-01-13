@@ -103,4 +103,49 @@
                 return true;
             }
         }
+
+        /*** [FUNCTION PAGINATOR TABLE] ***/
+        protected static function paginatorTable($pageCurrent, $pageNumber, $url, $button) {
+            $table =    '<nav aria-label="Page navigation example"> 
+                        <ul class="pagination justify-content-center">';
+
+            if($pageCurrent == 1) {
+                $table.=    '<li class="page-item disabled"><a class="page-link">
+                            <i class="fas fa-angle-double-left"></i></a></li>';
+
+            } else {
+                $table.=    '<li class="page-item"><a class="page-link" href="'.$url.'1/">
+                            <i class="fas fa-angle-double-left"></i></a></li>
+                            <li class="page-item"><a class="page-link" href="'.$url.($pageCurrent-1).'/">
+                            <i class="fas fa-angle-left"></i></a></li>';
+            }
+
+            $countIteration = 0;
+            for($i = $pageCurrent; $i <= $pageNumber; $i++) {
+                if($countIteration >= $button) {
+                    break;
+                }
+                if($pageCurrent == $i) {
+                    $table.='<li class="page-item"><a class="page-link active" href="'.$url.$i.'/">'.$i.'</a></li>';
+                } else {
+                    $table.='<li class="page-item"><a class="page-link" href="'.$url.$i.'/">'.$i.'</a></li>';
+                }
+                $countIteration++;
+            }
+
+            if($pageCurrent == $pageNumber) {
+                $table.=    '<li class="page-item disabled"><a class="page-link">
+                            <i class="fas fa-angle-double-right"></i></a></li>';
+
+            } else {
+                $table.=    '<li class="page-item"><a class="page-link href="'.$url.($pageCurrent+1).'/">
+                            <i class="fas fa-angle-right"></i></a></li>
+                            <li class="page-item"><a class="page-link href="'.$url.$pageNumber.'/">
+                            <i class="fas fa-angle-double-right"></i></a></li>
+                            ';
+            }
+
+            $table.= '</ul> </nav>';
+            return $table;
+        }
     }
